@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:html",
+    "test": "npm-run-all test:*",
     "test:html": "globstar nu-html-checker *.html",
+    "test:jshint" : "globstar jshint js/*.js",
     "init-project": "npm install && npm-run-all init:*",
     "init:dirs": "mkdirp sass css vendor images js",
     "init:files": "touch README.md index.html sass/style.scss js/script.js",
@@ -42,5 +43,8 @@
     "nu-html-checker": "^0.1.0",
     "onchange": "^4.0.0",
     "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "jshint": "^2.9.5"
   }
 }
